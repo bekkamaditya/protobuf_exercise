@@ -4,6 +4,7 @@ from search_movies import *
 from list_movies import *
 from add_movie import *
 from delete import *
+from update import *
 
 while True :
     print "Choose your action"
