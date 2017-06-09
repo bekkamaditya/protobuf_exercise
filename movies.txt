@@ -1,0 +1,36 @@
+
+vie name: bahubali
+Directors: rajamouli, 
+Actors: prabhas, rana, anushka, tamannah, 
+Genres: Adventure, Drama, 
+Languages: telugu, hindi, kannada, tamil, english, 
+Run time: 168
+Production House: raghavendra rao
+Release Date: 28/04/2017
+Reviews: 
+User: aditya bekkam
+Rating: 9
+Comment: awesome stuff
+
+Movie name: weise
+Directors: bore, king, 
+Actors: hero, heroine, comedian, 
+Genres: Adventure, 
+Languages: english, 
+Run time: 122
+Country: england
+Release Date: 21/04/2008
+Reviews: 
+None to show
+
+Movie name: Forrest Gump
+Directors: Robert Zemeckis, Winston Groom, Eric Roth, 
+Actors: Tom Hanks, Robin Wright, Gary Sinsie, 
+Genres: Drama, 
+Languages: English, 
+Run time: 158
+Production House: Warner Bros
+Country: USA
+Release Date: 7/10/1994
+Reviews: 
+None to show

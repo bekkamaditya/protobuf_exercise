@@ -1,0 +1,54 @@
+syntax = "proto2" ;
+
+enum MonthType {
+  JANUARY = 1 ;
+  FEBRUARY = 2;
+  MARCH = 3;
+  APRIL = 4;
+  MAY = 5;
+  JUNE = 6;
+  JULY = 7;
+  AUGUST = 8;
+  SEPTEMBER = 9;
+  OCTOBER = 10;
+  NOVEMBER =11;
+  DECEMBER =12;
+}
+
+enum GenreType{
+  ADVENTURE = 0 ;
+  SCI_FI = 1;
+  DRAMA =2;
+}
+
+message Review {
+  required string userName = 1 ;
+  optional int32 rating =2 ;
+  optional Date date = 3;
+  optional string comment =4;
+}
+
+message Date {
+  required int32 day = 1;
+  required MonthType month = 2 [ default = JANUARY];
+  required int32 year = 3;
+}
+
+message Movie {
+  required string name = 1 ;
+  repeated string directors =2 ;
+  //required string actor ;
+  repeated string actors = 3 ;
+  //required GenreType basicGenre ;
+  repeated GenreType genres = 4 ;
+  repeated string languages = 5;
+  required int32 runTime = 6;
+  optional string productionHouse = 7;
+  required Date releaseDate = 8;
+  repeated Review reviews = 9 ;
+  optional string country = 10;
+}
+
+message Movie_list{
+  repeated Movie movies =1 ;
+}
