@@ -19,10 +19,97 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='movie.proto',
   package='',
-  syntax='proto2',
-  serialized_pb=_b('\n\x0bmovie.proto\"P\n\x06Review\x12\x10\n\x08userName\x18\x01 \x02(\t\x12\x0e\n\x06rating\x18\x02 \x01(\x05\x12\x13\n\x04\x64\x61te\x18\x03 \x01(\x0b\x32\x05.Date\x12\x0f\n\x07\x63omment\x18\x04 \x01(\t\"E\n\x04\x44\x61te\x12\x0b\n\x03\x64\x61y\x18\x01 \x02(\x05\x12\"\n\x05month\x18\x02 \x02(\x0e\x32\n.MonthType:\x07JANUARY\x12\x0c\n\x04year\x18\x03 \x02(\x05\"\xd8\x01\n\x05Movie\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x11\n\tdirectors\x18\x02 \x03(\t\x12\x0e\n\x06\x61\x63tors\x18\x03 \x03(\t\x12\x1a\n\x06genres\x18\x04 \x03(\x0e\x32\n.GenreType\x12\x11\n\tlanguages\x18\x05 \x03(\t\x12\x0f\n\x07runTime\x18\x06 \x02(\x05\x12\x17\n\x0fproductionHouse\x18\x07 \x01(\t\x12\x1a\n\x0breleaseDate\x18\x08 \x02(\x0b\x32\x05.Date\x12\x18\n\x07reviews\x18\t \x03(\x0b\x32\x07.Review\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\"$\n\nMovie_list\x12\x16\n\x06movies\x18\x01 \x03(\x0b\x32\x06.Movie*\x9d\x01\n\tMonthType\x12\x0b\n\x07JANUARY\x10\x01\x12\x0c\n\x08\x46\x45\x42RUARY\x10\x02\x12\t\n\x05MARCH\x10\x03\x12\t\n\x05\x41PRIL\x10\x04\x12\x07\n\x03MAY\x10\x05\x12\x08\n\x04JUNE\x10\x06\x12\x08\n\x04JULY\x10\x07\x12\n\n\x06\x41UGUST\x10\x08\x12\r\n\tSEPTEMBER\x10\t\x12\x0b\n\x07OCTOBER\x10\n\x12\x0c\n\x08NOVEMBER\x10\x0b\x12\x0c\n\x08\x44\x45\x43\x45MBER\x10\x0c*1\n\tGenreType\x12\r\n\tADVENTURE\x10\x00\x12\n\n\x06SCI_FI\x10\x01\x12\t\n\x05\x44RAMA\x10\x02')
+  syntax='proto3',
+  serialized_pb=_b('\n\x0bmovie.proto\"6\n\tSearchReq\x12\x1b\n\x08searchBy\x18\x01 \x01(\x0e\x32\t.Category\x12\x0c\n\x04word\x18\x02 \x01(\t\"H\n\tUpdateReq\x12\x11\n\tmovieName\x18\x01 \x01(\t\x12\x19\n\x06update\x18\x02 \x01(\x0e\x32\t.Category\x12\r\n\x05value\x18\x03 \x01(\t\"9\n\x07UserReq\x12\x1c\n\x06header\x18\x01 \x01(\x0e\x32\x0c.RequestType\x12\x10\n\x08\x61rgument\x18\x02 \x01(\t\"!\n\x08Response\x12\x15\n\x05movie\x18\x01 \x01(\x0b\x32\x06.Movie\"P\n\x06Review\x12\x10\n\x08userName\x18\x01 \x01(\t\x12\x0e\n\x06rating\x18\x02 \x01(\x05\x12\x13\n\x04\x64\x61te\x18\x03 \x01(\x0b\x32\x05.Date\x12\x0f\n\x07\x63omment\x18\x04 \x01(\t\"<\n\x04\x44\x61te\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x05\x12\x19\n\x05month\x18\x02 \x01(\x0e\x32\n.MonthType\x12\x0c\n\x04year\x18\x03 \x01(\x05\"\xd8\x01\n\x05Movie\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tdirectors\x18\x02 \x03(\t\x12\x0e\n\x06\x61\x63tors\x18\x03 \x03(\t\x12\x1a\n\x06genres\x18\x04 \x03(\x0e\x32\n.GenreType\x12\x11\n\tlanguages\x18\x05 \x03(\t\x12\x0f\n\x07runTime\x18\x06 \x01(\x05\x12\x17\n\x0fproductionHouse\x18\x07 \x01(\t\x12\x1a\n\x0breleaseDate\x18\x08 \x01(\x0b\x32\x05.Date\x12\x18\n\x07reviews\x18\t \x03(\x0b\x32\x07.Review\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\"$\n\nMovie_list\x12\x16\n\x06movies\x18\x01 \x03(\x0b\x32\x06.Movie*\x8a\x01\n\x08\x43\x61tegory\x12\t\n\x05\x41\x43TOR\x10\x00\x12\x0c\n\x08\x44IRECTOR\x10\x01\x12\t\n\x05GENRE\x10\x02\x12\x08\n\x04NAME\x10\x03\x12\x0c\n\x08RUN_TIME\x10\x04\x12\x14\n\x10PRODUCTION_HOUSE\x10\x05\x12\x0b\n\x07\x43OUNTRY\x10\x06\x12\x10\n\x0cRELEASE_DATE\x10\x07\x12\r\n\tLANGUAGES\x10\x08*G\n\x0bRequestType\x12\x07\n\x03\x41\x44\x44\x10\x00\x12\n\n\x06SEARCH\x10\x01\x12\n\n\x06UPDATE\x10\x02\x12\n\n\x06\x44\x45LETE\x10\x03\x12\x0b\n\x07SHOWALL\x10\x04*\xac\x01\n\tMonthType\x12\r\n\tTEMPORARY\x10\x00\x12\x0b\n\x07JANUARY\x10\x01\x12\x0c\n\x08\x46\x45\x42RUARY\x10\x02\x12\t\n\x05MARCH\x10\x03\x12\t\n\x05\x41PRIL\x10\x04\x12\x07\n\x03MAY\x10\x05\x12\x08\n\x04JUNE\x10\x06\x12\x08\n\x04JULY\x10\x07\x12\n\n\x06\x41UGUST\x10\x08\x12\r\n\tSEPTEMBER\x10\t\x12\x0b\n\x07OCTOBER\x10\n\x12\x0c\n\x08NOVEMBER\x10\x0b\x12\x0c\n\x08\x44\x45\x43\x45MBER\x10\x0c*1\n\tGenreType\x12\r\n\tADVENTURE\x10\x00\x12\n\n\x06SCI_FI\x10\x01\x12\t\n\x05\x44RAMA\x10\x02\x32\x33\n\nMovieGuide\x12%\n\nUserAction\x12\x08.UserReq\x1a\t.Response\"\x00\x30\x01\x62\x06proto3')
 )
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
+_CATEGORY = _descriptor.EnumDescriptor(
+  name='Category',
+  full_name='Category',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ACTOR', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DIRECTOR', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='GENRE', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NAME', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RUN_TIME', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PRODUCTION_HOUSE', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RELEASE_DATE', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='LANGUAGES', index=8, number=8,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=641,
+  serialized_end=779,
+)
+_sym_db.RegisterEnumDescriptor(_CATEGORY)
+
+Category = enum_type_wrapper.EnumTypeWrapper(_CATEGORY)
+_REQUESTTYPE = _descriptor.EnumDescriptor(
+  name='RequestType',
+  full_name='RequestType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ADD', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SEARCH', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='UPDATE', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DELETE', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SHOWALL', index=4, number=4,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=781,
+  serialized_end=852,
+)
+_sym_db.RegisterEnumDescriptor(_REQUESTTYPE)
+
+RequestType = enum_type_wrapper.EnumTypeWrapper(_REQUESTTYPE)
 _MONTHTYPE = _descriptor.EnumDescriptor(
   name='MonthType',
   full_name='MonthType',
@@ -30,58 +117,62 @@ _MONTHTYPE = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='JANUARY', index=0, number=1,
+      name='TEMPORARY', index=0, number=0,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='FEBRUARY', index=1, number=2,
+      name='JANUARY', index=1, number=1,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='MARCH', index=2, number=3,
+      name='FEBRUARY', index=2, number=2,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='APRIL', index=3, number=4,
+      name='MARCH', index=3, number=3,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='MAY', index=4, number=5,
+      name='APRIL', index=4, number=4,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='JUNE', index=5, number=6,
+      name='MAY', index=5, number=5,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='JULY', index=6, number=7,
+      name='JUNE', index=6, number=6,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='AUGUST', index=7, number=8,
+      name='JULY', index=7, number=7,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='SEPTEMBER', index=8, number=9,
+      name='AUGUST', index=8, number=8,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='OCTOBER', index=9, number=10,
+      name='SEPTEMBER', index=9, number=9,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='NOVEMBER', index=10, number=11,
+      name='OCTOBER', index=10, number=10,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='DECEMBER', index=11, number=12,
+      name='NOVEMBER', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DECEMBER', index=12, number=12,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=426,
-  serialized_end=583,
+  serialized_start=855,
+  serialized_end=1027,
 )
 _sym_db.RegisterEnumDescriptor(_MONTHTYPE)
 
@@ -107,12 +198,27 @@ _GENRETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=585,
-  serialized_end=634,
+  serialized_start=1029,
+  serialized_end=1078,
 )
 _sym_db.RegisterEnumDescriptor(_GENRETYPE)
 
 GenreType = enum_type_wrapper.EnumTypeWrapper(_GENRETYPE)
+ACTOR = 0
+DIRECTOR = 1
+GENRE = 2
+NAME = 3
+RUN_TIME = 4
+PRODUCTION_HOUSE = 5
+COUNTRY = 6
+RELEASE_DATE = 7
+LANGUAGES = 8
+ADD = 0
+SEARCH = 1
+UPDATE = 2
+DELETE = 3
+SHOWALL = 4
+TEMPORARY = 0
 JANUARY = 1
 FEBRUARY = 2
 MARCH = 3
@@ -131,6 +237,158 @@ DRAMA = 2
 
 
 
+_SEARCHREQ = _descriptor.Descriptor(
+  name='SearchReq',
+  full_name='SearchReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='searchBy', full_name='SearchReq.searchBy', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='word', full_name='SearchReq.word', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15,
+  serialized_end=69,
+)
+
+
+_UPDATEREQ = _descriptor.Descriptor(
+  name='UpdateReq',
+  full_name='UpdateReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='movieName', full_name='UpdateReq.movieName', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='update', full_name='UpdateReq.update', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='UpdateReq.value', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=71,
+  serialized_end=143,
+)
+
+
+_USERREQ = _descriptor.Descriptor(
+  name='UserReq',
+  full_name='UserReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='UserReq.header', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='argument', full_name='UserReq.argument', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=145,
+  serialized_end=202,
+)
+
+
+_RESPONSE = _descriptor.Descriptor(
+  name='Response',
+  full_name='Response',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='movie', full_name='Response.movie', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=204,
+  serialized_end=237,
+)
+
+
 _REVIEW = _descriptor.Descriptor(
   name='Review',
   full_name='Review',
@@ -140,7 +398,7 @@ _REVIEW = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='userName', full_name='Review.userName', index=0,
-      number=1, type=9, cpp_type=9, label=2,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -174,12 +432,12 @@ _REVIEW = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15,
-  serialized_end=95,
+  serialized_start=239,
+  serialized_end=319,
 )
 
 
@@ -192,21 +450,21 @@ _DATE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='day', full_name='Date.day', index=0,
-      number=1, type=5, cpp_type=1, label=2,
+      number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='month', full_name='Date.month', index=1,
-      number=2, type=14, cpp_type=8, label=2,
-      has_default_value=True, default_value=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='year', full_name='Date.year', index=2,
-      number=3, type=5, cpp_type=1, label=2,
+      number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -219,12 +477,12 @@ _DATE = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=97,
-  serialized_end=166,
+  serialized_start=321,
+  serialized_end=381,
 )
 
 
@@ -237,7 +495,7 @@ _MOVIE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='name', full_name='Movie.name', index=0,
-      number=1, type=9, cpp_type=9, label=2,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -272,7 +530,7 @@ _MOVIE = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='runTime', full_name='Movie.runTime', index=5,
-      number=6, type=5, cpp_type=1, label=2,
+      number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -286,7 +544,7 @@ _MOVIE = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='releaseDate', full_name='Movie.releaseDate', index=7,
-      number=8, type=11, cpp_type=10, label=2,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -313,12 +571,12 @@ _MOVIE = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=169,
-  serialized_end=385,
+  serialized_start=384,
+  serialized_end=600,
 )
 
 
@@ -344,27 +602,64 @@ _MOVIE_LIST = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=387,
-  serialized_end=423,
+  serialized_start=602,
+  serialized_end=638,
 )
 
+_SEARCHREQ.fields_by_name['searchBy'].enum_type = _CATEGORY
+_UPDATEREQ.fields_by_name['update'].enum_type = _CATEGORY
+_USERREQ.fields_by_name['header'].enum_type = _REQUESTTYPE
+_RESPONSE.fields_by_name['movie'].message_type = _MOVIE
 _REVIEW.fields_by_name['date'].message_type = _DATE
 _DATE.fields_by_name['month'].enum_type = _MONTHTYPE
 _MOVIE.fields_by_name['genres'].enum_type = _GENRETYPE
 _MOVIE.fields_by_name['releaseDate'].message_type = _DATE
 _MOVIE.fields_by_name['reviews'].message_type = _REVIEW
 _MOVIE_LIST.fields_by_name['movies'].message_type = _MOVIE
+DESCRIPTOR.message_types_by_name['SearchReq'] = _SEARCHREQ
+DESCRIPTOR.message_types_by_name['UpdateReq'] = _UPDATEREQ
+DESCRIPTOR.message_types_by_name['UserReq'] = _USERREQ
+DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 DESCRIPTOR.message_types_by_name['Review'] = _REVIEW
 DESCRIPTOR.message_types_by_name['Date'] = _DATE
 DESCRIPTOR.message_types_by_name['Movie'] = _MOVIE
 DESCRIPTOR.message_types_by_name['Movie_list'] = _MOVIE_LIST
+DESCRIPTOR.enum_types_by_name['Category'] = _CATEGORY
+DESCRIPTOR.enum_types_by_name['RequestType'] = _REQUESTTYPE
 DESCRIPTOR.enum_types_by_name['MonthType'] = _MONTHTYPE
 DESCRIPTOR.enum_types_by_name['GenreType'] = _GENRETYPE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+SearchReq = _reflection.GeneratedProtocolMessageType('SearchReq', (_message.Message,), dict(
+  DESCRIPTOR = _SEARCHREQ,
+  __module__ = 'movie_pb2'
+  # @@protoc_insertion_point(class_scope:SearchReq)
+  ))
+_sym_db.RegisterMessage(SearchReq)
+
+UpdateReq = _reflection.GeneratedProtocolMessageType('UpdateReq', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEREQ,
+  __module__ = 'movie_pb2'
+  # @@protoc_insertion_point(class_scope:UpdateReq)
+  ))
+_sym_db.RegisterMessage(UpdateReq)
+
+UserReq = _reflection.GeneratedProtocolMessageType('UserReq', (_message.Message,), dict(
+  DESCRIPTOR = _USERREQ,
+  __module__ = 'movie_pb2'
+  # @@protoc_insertion_point(class_scope:UserReq)
+  ))
+_sym_db.RegisterMessage(UserReq)
+
+Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSE,
+  __module__ = 'movie_pb2'
+  # @@protoc_insertion_point(class_scope:Response)
+  ))
+_sym_db.RegisterMessage(Response)
 
 Review = _reflection.GeneratedProtocolMessageType('Review', (_message.Message,), dict(
   DESCRIPTOR = _REVIEW,
@@ -395,4 +690,126 @@ Movie_list = _reflection.GeneratedProtocolMessageType('Movie_list', (_message.Me
 _sym_db.RegisterMessage(Movie_list)
 
 
+try:
+  # THESE ELEMENTS WILL BE DEPRECATED.
+  # Please use the generated *_pb2_grpc.py files instead.
+  import grpc
+  from grpc.beta import implementations as beta_implementations
+  from grpc.beta import interfaces as beta_interfaces
+  from grpc.framework.common import cardinality
+  from grpc.framework.interfaces.face import utilities as face_utilities
+
+
+  class MovieGuideStub(object):
+
+    def __init__(self, channel):
+      """Constructor.
+
+      Args:
+        channel: A grpc.Channel.
+      """
+      self.UserAction = channel.unary_stream(
+          '/MovieGuide/UserAction',
+          request_serializer=UserReq.SerializeToString,
+          response_deserializer=Response.FromString,
+          )
+
+
+  class MovieGuideServicer(object):
+
+    def UserAction(self, request, context):
+      """rpc AddMovie( UserReq ) returns (Response){}
+      rpc SearchMovie( UserReq ) returns (stream Response ){}
+      rpc UpdateMovie( UserReq ) returns (Response) {}
+      rpc DeleteMovie( UserReq ) returns (Response) {} 
+      rpc ShowAllMovies( UserReq ) returns (stream Response) {}
+      """
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+
+  def add_MovieGuideServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+        'UserAction': grpc.unary_stream_rpc_method_handler(
+            servicer.UserAction,
+            request_deserializer=UserReq.FromString,
+            response_serializer=Response.SerializeToString,
+        ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+        'MovieGuide', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+  class BetaMovieGuideServicer(object):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This class was generated
+    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
+    def UserAction(self, request, context):
+      """rpc AddMovie( UserReq ) returns (Response){}
+      rpc SearchMovie( UserReq ) returns (stream Response ){}
+      rpc UpdateMovie( UserReq ) returns (Response) {}
+      rpc DeleteMovie( UserReq ) returns (Response) {} 
+      rpc ShowAllMovies( UserReq ) returns (stream Response) {}
+      """
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+
+
+  class BetaMovieGuideStub(object):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This class was generated
+    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
+    def UserAction(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      """rpc AddMovie( UserReq ) returns (Response){}
+      rpc SearchMovie( UserReq ) returns (stream Response ){}
+      rpc UpdateMovie( UserReq ) returns (Response) {}
+      rpc DeleteMovie( UserReq ) returns (Response) {} 
+      rpc ShowAllMovies( UserReq ) returns (stream Response) {}
+      """
+      raise NotImplementedError()
+
+
+  def beta_create_MovieGuide_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This function was
+    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
+    request_deserializers = {
+      ('MovieGuide', 'UserAction'): UserReq.FromString,
+    }
+    response_serializers = {
+      ('MovieGuide', 'UserAction'): Response.SerializeToString,
+    }
+    method_implementations = {
+      ('MovieGuide', 'UserAction'): face_utilities.unary_stream_inline(servicer.UserAction),
+    }
+    server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
+    return beta_implementations.server(method_implementations, options=server_options)
+
+
+  def beta_create_MovieGuide_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This function was
+    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
+    request_serializers = {
+      ('MovieGuide', 'UserAction'): UserReq.SerializeToString,
+    }
+    response_deserializers = {
+      ('MovieGuide', 'UserAction'): Response.FromString,
+    }
+    cardinalities = {
+      'UserAction': cardinality.Cardinality.UNARY_STREAM,
+    }
+    stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
+    return beta_implementations.dynamic_stub(channel, 'MovieGuide', cardinalities, options=stub_options)
+except ImportError:
+  pass
 # @@protoc_insertion_point(module_scope)

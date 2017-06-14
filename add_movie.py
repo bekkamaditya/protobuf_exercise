@@ -115,11 +115,14 @@ def PromptForMovieDetails():
         elif mon == 12:
             review.date.month = movie_pb2.DECEMBER
         review.date.year = int( list_temp[2] )
-    print movie
-    # File to database storage
+    #print movie
+    addToDB(movie)
+
+def addToDB(movie):
     db = bsddb3.hashopen('movies.db','c')
-    db[key] = pickle.dumps(movie)
+    db[pickle.dumps(movie.name)] = pickle.dumps(movie)
+    
 
 def addMovie():
     # File to database storage
-    PromptForMovieDetails()
+    movie = PromptForMovieDetails()

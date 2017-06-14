@@ -1,6 +1,56 @@
-syntax = "proto2" ;
+syntax = "proto3" ;
+
+service MovieGuide{
+  /*rpc AddMovie( UserReq ) returns (Response){}
+  rpc SearchMovie( UserReq ) returns (stream Response ){}
+  rpc UpdateMovie( UserReq ) returns (Response) {}
+  rpc DeleteMovie( UserReq ) returns (Response) {} 
+  rpc ShowAllMovies( UserReq ) returns (stream Response) {}*/
+  rpc UserAction( UserReq ) returns (stream Response) {}
+}
+
+message SearchReq {
+  Category searchBy = 1;
+  string word = 2;  
+}
+
+message UpdateReq {
+  string movieName = 1;
+  Category update = 2;
+  string value = 3;
+}
+
+enum Category{
+  ACTOR = 0;
+  DIRECTOR = 1;
+  GENRE = 2;
+  NAME = 3;
+  RUN_TIME = 4;
+  PRODUCTION_HOUSE = 5;
+  COUNTRY = 6;
+  RELEASE_DATE = 7;
+  LANGUAGES = 8;
+}
+
+enum RequestType {
+  ADD = 0;
+  SEARCH = 1;
+  UPDATE = 2;
+  DELETE = 3;
+  SHOWALL = 4;
+}
+
+message UserReq{
+  RequestType header = 1;
+  string argument = 2;
+}
+
+message Response{
+  Movie movie = 1;
+}
 
 enum MonthType {
+  TEMPORARY = 0;
   JANUARY = 1 ;
   FEBRUARY = 2;
   MARCH = 3;
@@ -22,31 +72,31 @@ enum GenreType{
 }
 
 message Review {
-  required string userName = 1 ;
-  optional int32 rating =2 ;
-  optional Date date = 3;
-  optional string comment =4;
+  string userName = 1 ;
+  int32 rating =2 ;
+  Date date = 3;
+  string comment =4;
 }
 
 message Date {
-  required int32 day = 1;
-  required MonthType month = 2 [ default = JANUARY];
-  required int32 year = 3;
+  int32 day = 1;
+  MonthType month = 2 ;
+  int32 year = 3;
 }
 
 message Movie {
-  required string name = 1 ;
+  string name = 1 ;
   repeated string directors =2 ;
   //required string actor ;
   repeated string actors = 3 ;
   //required GenreType basicGenre ;
   repeated GenreType genres = 4 ;
   repeated string languages = 5;
-  required int32 runTime = 6;
-  optional string productionHouse = 7;
-  required Date releaseDate = 8;
+  int32 runTime = 6;
+  string productionHouse = 7;
+  Date releaseDate = 8;
   repeated Review reviews = 9 ;
-  optional string country = 10;
+  string country = 10;
 }
 
 message Movie_list{

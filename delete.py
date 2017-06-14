@@ -13,7 +13,7 @@ def deleteMovie() :
         index = -1
         for key in db.keys():
 	    index = index + 1
-            if key == name :
+            if (pickle.loads(db[key])).name == name :
                 del db[key]
 	        flag = False
 	# File storage to database storage
